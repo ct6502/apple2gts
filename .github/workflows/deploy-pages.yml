@@ -1,12 +1,16 @@
 # Publishes the prebuilt site that apple2ts pushes to the gh-pages branch.
 # The site is built in ct6502/apple2ts and copied here; nothing is compiled
 # in this repository.
+#
+# This workflow is started by a repository_dispatch event rather than by the
+# push to gh-pages: push events run the workflow file found in the pushed ref,
+# and gh-pages holds only site files, so a push trigger there could never fire.
 
 name: Deploy GitHub Pages
 
 on:
-  push:
-    branches: [ gh-pages ]
+  repository_dispatch:
+    types: [ apple2ts-deploy ]
   workflow_dispatch:
 
 permissions:

@@ -29,9 +29,15 @@ overwrites it.
    [`JamesIves/github-pages-deploy-action`](https://github.com/JamesIves/github-pages-deploy-action),
    authenticated with a fine-grained token held in the `APPLE2GTS_TOKEN` secret of the
    apple2ts repository.
-3. The push to `gh-pages` triggers
-   [`deploy-pages.yml`](.github/workflows/deploy-pages.yml) here, which uploads the branch
-   contents as a Pages artifact and publishes it with `actions/deploy-pages`.
+3. The push to `gh-pages` is followed by a `repository_dispatch` event sent from
+   apple2ts, which triggers
+   [`deploy-pages.yml`](.github/workflows/deploy-pages.yml) here. That workflow uploads the
+   branch contents as a Pages artifact and publishes it with `actions/deploy-pages`.
+
+   The dispatch is required because a `push` trigger would never fire: GitHub runs the
+   workflow file found in the pushed ref, and `gh-pages` contains only site files. Use
+   *Run workflow* on this repository's Actions tab to redeploy the current `gh-pages`
+   contents without a new apple2ts build.
 
 ## Credits
 
