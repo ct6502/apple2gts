@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="favicon-gts.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="A pure-TypeScript Apple IIgs emulator: 65816 at 2.8 MHz, Ensoniq DOC, ADB, and Super Hi-Res graphics." />
+  <link rel="apple-touch-icon" href="logo192.png" />
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Preload custom fonts -->
+  <link rel="preload" href="./assets/PrintChar21-BPcMFCkc.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="./assets/PRNumber3-Dr8uhRD_.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="./assets/Silver-CCeE2eVZ.woff2" as="font" type="font/woff2" crossorigin />
+
+  <!-- Asset Registry Script -->
+  <script>
+    window.assetRegistry = {
+      // Images
+      bgImage: "assets/crt.png",
+      bgImgApple2Plus: "assets/nec_monitor.png",
+      monitorOpeningMask: "assets/crt-opening-mask.png",
+      disk2off: "assets/disk2off.png",
+      disk2on: "assets/disk2on.png",
+      disk2offEmpty: "assets/disk2off-empty.png",
+      disk2onEmpty: "assets/disk2on-empty.png",
+      floppy35off: "assets/floppy35off.png",
+      floppy35on: "assets/floppy35on.png",
+      floppy35offEmpty: "assets/floppy35off-empty.png",
+      floppy35onEmpty: "assets/floppy35on-empty.png",
+      hardDriveOff: "assets/harddrive.png",
+      hardDriveOn: "assets/harddriveOn.png",
+      diskicons: "assets/diskicons.png",
+      runningGuy: "assets/runningGuy.gif",
+      dotCursor: "dot.png",
+      // Audio
+      driveMotor: "assets/driveMotor.mp3",
+      driveTrackOffEnd: "assets/driveTrackOffEnd.mp3",
+      driveTrackSeekLong: "assets/driveTrackSeekLong.mp3",
+      imagewriterPrint: "assets/imagewriterPrint.mp3",
+      imagewriterLinefeed: "assets/imagewriterLinefeed.mp3",
+      imagewriterTurnOn: "assets/imagewriterTurnOn.mp3",
+    };
+  </script>
+
+  <title>Apple2GTS - Apple IIgs Emulator in TypeScript</title>
+  <script type="module" crossorigin src="./assets/index-DNmA5gK6.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-Im4JFmd_.css">
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+</body>
+
+</html>
